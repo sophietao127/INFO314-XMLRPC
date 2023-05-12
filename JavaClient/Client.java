@@ -4,6 +4,7 @@ import java.net.http.*;
 import javax.xml.parsers.*;
 import javax.xml.xpath.*;
 import org.w3c.dom.*;
+import java.lang.Runtime.Version;
 
 import org.w3c.dom.Node;
 
@@ -92,6 +93,7 @@ public class Client {
         }
         return result;
     }
+    
     // create request
     public static String buildXMLRequest(String methodName, Object... arguments) {
         // Create a request body
@@ -107,6 +109,7 @@ public class Client {
         String requestBody = "<?xml version = '1.0'?><methodCall><methodName>" + methodName + "</methodName>" + parameters + "</methodCall>";
         return requestBody;
     }
+    
     // send request from client to server
     public static int sendRequest(String methodName, Object... arguments) {
         try {
