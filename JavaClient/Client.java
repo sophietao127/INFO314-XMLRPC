@@ -12,9 +12,14 @@ import org.w3c.dom.Node;
  * were introduced in Java11.
  */
 public class Client {
-    private static DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+    // private static DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+    private static String host;
+    private static int port;
 
     public static void main(String... args) throws Exception {
+        host = args[0];
+        port = Integer.valueOf(args[1]);
+        
         System.out.println(add() == 0);
         System.out.println(add(1, 2, 3, 4, 5) == 15);
         System.out.println(add(2, 4) == 6);
